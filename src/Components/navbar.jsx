@@ -4,10 +4,10 @@ import {Link} from 'react-router-dom'
 const navbar = () => {
   return (
     <div className="navbar flex">
-        <div class="left-nav">
+        <div className="left-nav">
             <h1>PaperAi</h1>
         </div>
-        <div class="right-nav flex">
+        <div className="right-nav flex">
             <Link to={"/"}>
                 Home
             </Link>
@@ -19,8 +19,8 @@ const navbar = () => {
             </Link>
         </div>
         <div className='auth flex'>
-            <button class="signup">Sign Up</button>
-            <button class='login'>Login</button>
+            <button className="signup">Sign Up</button>
+            <button className='login'>Login</button>
         </div>
     </div>
   )
