@@ -9,6 +9,8 @@ import './UploadPage.css'
 const UploadPage = () => {
     const inputRef = useRef(null)
     const [fileD,setfileD] = useState(null)
+    const [isDragOver,setIsDragOver] = useState(false)
+    const [url,setURL]  = useState(null)
     const handleChange = (e)=>{
         if(inputRef.current.files){
             setfileD(inputRef.current.files[0])
@@ -17,6 +19,20 @@ const UploadPage = () => {
     }
     const handleDelete = (e)=>{
         console.log("Deleted");
+    }
+    const handleOndragOver = (e)=>{
+        e.preventDefault()
+        setIsDragOver(true)
+    }
+    
+    const handleOnDrop = (e)=>{
+        e.preventDefault()
+        console.log(e.dataTransfer.files[0]);
+        setfileD(e.dataTransfer.files[0])
+        setURL(URL.createObjectURL(fileD))
+        console.log(url);
+        setIsDragOver(false)
+        
     }
   return (
     <div>
@@ -31,7 +47,14 @@ const UploadPage = () => {
 
                 <section className='DAD' >
                     <div className='drag-and-drop'>
-                        <div className='inner-text'>
+                        <div className='inner-text'
+                         onDragOver={handleOndragOver} onDrop={handleOnDrop} onDragLeave={()=>setIsDragOver(false)}
+                         style={
+                            {
+                                opacity:`${isDragOver?'0.7':'1'}`
+                            }
+                         }
+                         >
                             <input type='file' style={{display:"none"}} ref={inputRef} onChange={handleChange}/>
                             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#137FEC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud-upload-icon lucide-cloud-upload"><path d="M12 13v8"/><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="m8 17 4-4 4 4"/></svg>
                             <h2>Drag & drop your PDF here</h2>
@@ -46,7 +69,7 @@ const UploadPage = () => {
                                 
                                 <div>
                                     <h2>{fileD.name}</h2>
-                                    <p>{fileD.size/(1024*2)}MB</p>
+                                    <p>{Math.ceil(fileD.size/(1024))}KB</p>
                                 </div>
 
                                 </div>
@@ -58,7 +81,7 @@ const UploadPage = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chart-spline-icon lucide-chart-spline"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7"/></svg>
                             Upoad and Analyze
                         </button>
-
+                        <p>{url}</p>
                     </div>
                 </section>
             </section>
