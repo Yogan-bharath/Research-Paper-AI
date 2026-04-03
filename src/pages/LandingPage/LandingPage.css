@@ -1,20 +1,23 @@
-.main{
+.main {
     background-color: #F6F7F8;
 }
-.main-container{
+
+.main-container {
     max-width: 130em;
     margin: 1em auto;
+    padding: 0 2em;
 }
-.main-left{
+
+.main-left {
     flex-basis: 1;
     display: flex;
     flex-direction: column;
-    justify-content:start;
+    justify-content: start;
     text-align: left;
-    gap:1em
-
+    gap: 1em;
 }
-.small-text{
+
+.small-text {
     font-size: 1.4em;
     background-color: #DFEBF7;
     width: fit-content;
@@ -22,25 +25,18 @@
     color: #137FEC;
     border-radius: 4em;
 }
-.heading{
+
+.heading {
     font-size: 7em;
-    line-height:.9em;
+    line-height: .9em;
     width: 70%;
 }
-.upload{
+
+.upload {
     padding: 1em 2em;
     gap: .5em;
     text-decoration: none;
     width: 18em;
-}
-.main-right{
-    margin: 2em;
-    flex-basis: 1;
-}
-.footer-text{
-    font-size: 1.8em;
-}
-.upload{
     font-weight: 500;
     margin-top: 1em;
     color: white;
@@ -51,38 +47,56 @@
     transition: all ease .2s;
     box-shadow: #137fecc7 0px 5px 10px 0px;
 }
-.upload:hover{
+
+.upload:hover {
     scale: 1.02;
     cursor: pointer;
     overflow: hidden;
 }
-.main-right img{
+
+.main-right {
+    margin: 2em;
+    flex-basis: 1;
+}
+
+.footer-text {
+    font-size: 1.8em;
+}
+
+.main-right img {
     object-fit: cover;
     width: 90%;
     height: 20%;
 }
-.secoud-container{
+
+.secoud-container {
     max-width: 130em;
     margin: 0 auto;
-    padding:8em 0px;
+    padding: 8em 2em;
 }
-.p-color{
-    color:#137FEC;
+
+.p-color {
+    color: #137FEC;
     font-size: 1.8em;
 }
-.con-phara{
+
+.con-phara {
     font-size: 1.8em;
 }
-.con-h2{
+
+.con-h2 {
     font-size: 3.3em;
 }
-.con-head{
+
+.con-head {
     margin-bottom: 5em;
 }
-.con-foot{
+
+.con-foot {
     gap: 2.5em;
 }
-.card{
+
+.card {
     flex-basis: 1;
     display: flex;
     border-radius: 2em;
@@ -90,21 +104,203 @@
     align-items: start;
     border: 1px solid #E2E8F0;
     padding: 4em;
-    gap:1em;
+    gap: 1em;
     transition: all ease-in .1s;
 }
-.card svg{
-    padding:.9em;
+
+.card svg {
+    padding: .9em;
     border-radius: 1.5em;
-    background-color:#E7F2FD;
+    background-color: #E7F2FD;
 }
-.card h3{
+
+.card h3 {
     font-size: 1.8em;
 }
-.card p{
+
+.card p {
     font-size: 1.4em;
 }
-.card:hover{
+
+.card:hover {
     transform: translateY(-3px);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+/* --- Large desktops (1280px and below) --- */
+@media (max-width: 1280px) {
+    .heading {
+        font-size: 5.5em;
+        width: 80%;
+    }
+
+    .secoud-container {
+        padding: 6em 2em;
+    }
+}
+
+/* --- Tablets / small laptops (1024px and below) --- */
+@media (max-width: 1024px) {
+    .heading {
+        font-size: 4.5em;
+        width: 90%;
+    }
+
+    .con-h2 {
+        font-size: 2.8em;
+    }
+
+    .con-foot {
+        gap: 1.5em;
+    }
+
+    .card {
+        padding: 3em;
+    }
+
+    .secoud-container {
+        padding: 5em 2em;
+    }
+}
+
+/* --- Tablets portrait (768px and below) --- */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        padding: 0 1.5em;
+    }
+
+    .main-left {
+        text-align: center;
+        align-items: center;
+    }
+
+    .heading {
+        font-size: 3.5em;
+        width: 100%;
+        line-height: 1em;
+    }
+
+    .small-text {
+        font-size: 1.2em;
+    }
+
+    .upload {
+        width: 100%;
+        font-size: 1.2em;
+        text-align: center;
+    }
+
+    .main-right {
+        margin: 1em 0;
+        width: 100%;
+    }
+
+    .main-right img {
+        width: 100%;
+        height: auto;
+    }
+
+    .footer-text {
+        font-size: 1.5em;
+    }
+
+    .con-h2 {
+        font-size: 2.4em;
+    }
+
+    .p-color,
+    .con-phara {
+        font-size: 1.5em;
+    }
+
+    .con-head {
+        margin-bottom: 3em;
+    }
+
+    .con-foot {
+        flex-direction: column;
+        gap: 1.5em;
+    }
+
+    .card {
+        padding: 2.5em;
+        width: 100%;
+    }
+
+    .secoud-container {
+        padding: 4em 1.5em;
+    }
+}
+
+/* --- Mobile (480px and below) --- */
+@media (max-width: 480px) {
+    .heading {
+        font-size: 2.8em;
+        line-height: 1.1em;
+    }
+
+    .small-text {
+        font-size: 1em;
+    }
+
+    .upload {
+        font-size: 1.1em;
+        padding: 0.9em 1.5em;
+    }
+
+    .footer-text {
+        font-size: 1.3em;
+    }
+
+    .con-h2 {
+        font-size: 2em;
+    }
+
+    .p-color,
+    .con-phara {
+        font-size: 1.3em;
+    }
+
+    .card {
+        padding: 2em;
+        border-radius: 1.2em;
+    }
+
+    .card h3 {
+        font-size: 1.5em;
+    }
+
+    .card p {
+        font-size: 1.2em;
+    }
+
+    .con-head {
+        margin-bottom: 2em;
+    }
+
+    .secoud-container {
+        padding: 3em 1.2em;
+    }
+    
+}
+
+/* --- Very small screens (360px and below) --- */
+@media (max-width: 360px) {
+    .heading {
+        font-size: 2.2em;
+    }
+
+    .upload {
+        font-size: 1em;
+        width: 100%;
+    }
+
+    .card {
+        padding: 1.5em;
+    }
+
+    .con-h2 {
+        font-size: 1.8em;
+    }
 }

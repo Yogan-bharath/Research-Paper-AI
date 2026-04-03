@@ -1,0 +1,434 @@
+.main_container {
+    max-width: 130em;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2em;
+    padding: 0 2em;
+}
+
+.project_analysis {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.small {
+    font-size: 1.4em;
+}
+
+.mid_text {
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.project_details h1 {
+    font-size: 3.5em;
+}
+
+.paper_info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .4em;
+    font-size: 1.7em;
+    flex-wrap: wrap;
+}
+
+.hilated_text {
+    color: #137FEC;
+    background-color: #DFEBF7;
+    padding: .1em 1em;
+    border-radius: 1em;
+    font-size: .8em;
+    font-weight: 600;
+}
+
+.Result-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin-top: 2em;
+    gap: 2em;
+}
+
+.absrtact {
+    background-color: white;
+    border: 1px solid #1111117a;
+    border-radius: 3em;
+    padding: 2em;
+
+    p {
+        font-size: 1.7em;
+        margin-top: 1em;
+        color: #686b71;
+    }
+}
+
+.conbined-svgabstract {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.1em;
+
+    h1 {
+        font-size: 2em;
+    }
+
+    svg {
+        color: #137FEC;
+    }
+}
+
+.extracted-kewords {
+    margin: 1em;
+
+    h1 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: .4em;
+        font-size: 2.4em;
+
+        svg {
+            color: #137FEC;
+        }
+    }
+}
+
+.keywords {
+    margin-top: 2em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1em;
+    flex-wrap: wrap;
+
+    p {
+        font-size: 1.5em;
+        padding: .6em 1em;
+        border: 1.4px solid #1111116e;
+        border-radius: 1em;
+        font-weight: 500;
+    }
+
+    p:hover {
+        border: 1.4px solid #137FEC;
+    }
+}
+
+.right-section {
+    color: #686b71;
+
+    .analysis-insight {
+        border: 1px solid #137fecaf;
+        background-color: #137fec19;
+        border-radius: 3em;
+        display: flex;
+        flex-direction: column;
+        gap: 3em;
+        padding: 3em;
+
+        h1 {
+            color: #111;
+        }
+
+        h2 {
+            text-transform: uppercase;
+            font-size: 1.7em;
+            letter-spacing: 1px;
+            color: #137FEC;
+        }
+
+        .category {
+            p {
+                font-size: 1.4em;
+            }
+
+            h1 {
+                font-size: 2.8em;
+            }
+        }
+
+        .score {
+            font-size: 1.4em;
+        }
+
+        .dic {
+            font-style: italic;
+            font-size: 1.3em;
+        }
+    }
+}
+
+/* --- Large desktops (1280px and below) --- */
+@media (max-width: 1280px) {
+    .project_details h1 {
+        font-size: 3em;
+    }
+
+    .Result-section {
+        grid-template-columns: 1.5fr 1fr;
+    }
+
+    .right-section .analysis-insight {
+        padding: 2.5em;
+        gap: 2.5em;
+    }
+}
+
+/* --- Tablets / small laptops (1024px and below) --- */
+@media (max-width: 1024px) {
+    .main_container {
+        padding: 0 1.5em;
+    }
+
+    .project_details h1 {
+        font-size: 2.5em;
+    }
+
+    .paper_info {
+        font-size: 1.5em;
+    }
+
+    .Result-section {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5em;
+    }
+
+    .absrtact p {
+        font-size: 1.5em;
+    }
+
+    .extracted-kewords h1 {
+        font-size: 2em;
+    }
+
+    .keywords p {
+        font-size: 1.3em;
+    }
+
+    .right-section .analysis-insight {
+        padding: 2em;
+        gap: 2em;
+        border-radius: 2em;
+
+        .category h1 {
+            font-size: 2.4em;
+        }
+    }
+}
+
+/* --- Tablets portrait (768px and below) --- */
+@media (max-width: 768px) {
+    .main_container {
+        padding: 0 1.2em;
+        gap: 1.5em;
+    }
+
+    .project_details h1 {
+        font-size: 2em;
+    }
+
+    .paper_info {
+        font-size: 1.3em;
+    }
+
+    .small {
+        font-size: 1.2em;
+    }
+
+    .mid_text {
+        font-size: 1.3em;
+    }
+
+    .Result-section {
+        grid-template-columns: 1fr;
+        margin-top: 1.5em;
+        gap: 1.5em;
+    }
+
+    .absrtact {
+        border-radius: 2em;
+        padding: 1.5em;
+
+        p {
+            font-size: 1.4em;
+        }
+    }
+
+    .conbined-svgabstract h1 {
+        font-size: 1.7em;
+    }
+
+    .extracted-kewords {
+        margin: 0.5em;
+
+        h1 {
+            font-size: 1.8em;
+        }
+    }
+
+    .keywords {
+        gap: 0.7em;
+
+        p {
+            font-size: 1.2em;
+            padding: 0.5em 0.8em;
+        }
+    }
+
+    .right-section .analysis-insight {
+        padding: 1.8em;
+        gap: 1.5em;
+        border-radius: 2em;
+
+        h2 {
+            font-size: 1.5em;
+        }
+
+        .category h1 {
+            font-size: 2em;
+        }
+
+        .score,
+        .dic {
+            font-size: 1.2em;
+        }
+    }
+}
+
+/* --- Mobile (480px and below) --- */
+@media (max-width: 480px) {
+    .main_container {
+        padding: 0 1em;
+        gap: 1.2em;
+    }
+
+    .project_analysis {
+        gap: 0.7em;
+    }
+
+    .project_details h1 {
+        font-size: 1.6em;
+    }
+
+    .paper_info {
+        font-size: 1.1em;
+        gap: 0.3em;
+    }
+
+    .hilated_text {
+        font-size: 0.75em;
+        padding: 0.1em 0.7em;
+    }
+
+    .small {
+        font-size: 1.1em;
+    }
+
+    .mid_text {
+        font-size: 1.2em;
+    }
+
+    .Result-section {
+        margin-top: 1em;
+        gap: 1.2em;
+    }
+
+    .absrtact {
+        border-radius: 1.5em;
+        padding: 1.2em;
+
+        p {
+            font-size: 1.2em;
+            margin-top: 0.7em;
+        }
+    }
+
+    .conbined-svgabstract {
+        gap: 0.7em;
+
+        h1 {
+            font-size: 1.4em;
+        }
+    }
+
+    .extracted-kewords {
+        margin: 0.3em;
+
+        h1 {
+            font-size: 1.5em;
+        }
+    }
+
+    .keywords {
+        margin-top: 1.2em;
+        gap: 0.6em;
+
+        p {
+            font-size: 1.1em;
+            padding: 0.4em 0.7em;
+        }
+    }
+
+    .right-section .analysis-insight {
+        padding: 1.4em;
+        gap: 1.2em;
+        border-radius: 1.5em;
+
+        h2 {
+            font-size: 1.3em;
+            letter-spacing: 0.5px;
+        }
+
+        .category p {
+            font-size: 1.2em;
+        }
+
+        .category h1 {
+            font-size: 1.8em;
+        }
+
+        .score {
+            font-size: 1.1em;
+        }
+
+        .dic {
+            font-size: 1.1em;
+        }
+    }
+}
+
+/* --- Very small screens (360px and below) --- */
+@media (max-width: 360px) {
+    .project_details h1 {
+        font-size: 1.4em;
+    }
+
+    .paper_info {
+        font-size: 1em;
+    }
+
+    .absrtact p {
+        font-size: 1.1em;
+    }
+
+    .right-section .analysis-insight {
+        padding: 1.2em;
+
+        .category h1 {
+            font-size: 1.5em;
+        }
+
+        h2 {
+            font-size: 1.2em;
+        }
+    }
+
+    .keywords p {
+        font-size: 1em;
+    }
+}

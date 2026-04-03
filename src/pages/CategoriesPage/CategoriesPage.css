@@ -1,0 +1,242 @@
+.head-research {
+    h1 {
+        font-size: 3.5em;
+        font-weight: 800;
+    }
+
+    p {
+        font-size: 1.7em;
+    }
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2em;
+    margin-top: 2em;
+
+    .category {
+        border: 1px solid #11111137;
+        padding: 3em;
+        border-radius: 3em;
+        transition: all ease .6s;
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: fit-content;
+            background-color: #137fec1d;
+            transition: all ease .2s;
+            padding: .8em;
+            border-radius: 1.7em;
+
+            svg {
+                transition: all ease .2s;
+                color: #137FEC;
+                padding: .3em;
+                font-size: 1em;
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-top: .5em;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 1.3em;
+        }
+    }
+
+    .category:hover {
+        border: 1px solid #137feca6;
+        box-shadow: rgba(71, 152, 233, 0.2) 0px 8px 24px;
+
+        div {
+            background-color: #137fecd7;
+
+            svg {
+                color: white;
+            }
+        }
+    }
+}
+
+/* --- Large desktops (1280px and below) --- */
+@media (max-width: 1280px) {
+    .head-research {
+        h1 {
+            font-size: 3em;
+        }
+
+        p {
+            font-size: 1.5em;
+        }
+    }
+
+    .categories {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5em;
+
+        .category {
+            padding: 2.5em;
+            border-radius: 2.5em;
+
+            h2 {
+                font-size: 1.8em;
+            }
+        }
+    }
+}
+
+/* --- Tablets / small laptops (1024px and below) --- */
+@media (max-width: 1024px) {
+    .head-research {
+        h1 {
+            font-size: 2.5em;
+        }
+
+        p {
+            font-size: 1.4em;
+        }
+    }
+
+    .categories {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5em;
+
+        .category {
+            padding: 2em;
+            border-radius: 2em;
+
+            h2 {
+                font-size: 1.6em;
+            }
+
+            p {
+                font-size: 1.2em;
+            }
+        }
+    }
+}
+
+/* --- Tablets portrait (768px and below) --- */
+@media (max-width: 768px) {
+    .head-research {
+        h1 {
+            font-size: 2em;
+        }
+
+        p {
+            font-size: 1.3em;
+        }
+    }
+
+    .categories {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2em;
+        margin-top: 1.5em;
+
+        .category {
+            padding: 1.8em;
+            border-radius: 1.8em;
+
+            div {
+                padding: 0.6em;
+
+                svg {
+                    width: 26px;
+                    height: 26px;
+                }
+            }
+
+            h2 {
+                font-size: 1.4em;
+                margin-top: 0.4em;
+            }
+
+            p {
+                font-size: 1.1em;
+            }
+        }
+    }
+}
+
+/* --- Mobile (480px and below) --- */
+@media (max-width: 480px) {
+    .head-research {
+        h1 {
+            font-size: 1.7em;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+    }
+    
+    .categories {
+        grid-template-columns: repeat(1,1fr);
+        gap: 1em;
+        margin-top: 1.2em;
+
+        .category {
+            padding: 1.4em;
+            border-radius: 1.5em;
+
+            div {
+                padding: 0.5em;
+                border-radius: 1.2em;
+
+                svg {
+                    width: 22px;
+                    height: 22px;
+                    padding: 0.2em;
+                }
+            }
+
+            h2 {
+                font-size: 1.2em;
+                margin-top: 0.3em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+        }
+    }
+}
+
+/* --- Very small screens (360px and below) --- */
+@media (max-width: 360px) {
+    .head-research {
+        h1 {
+            font-size: 1.5em;
+        }
+
+        p {
+            font-size: 1.1em;
+        }
+    }
+
+    .categories {
+        grid-template-columns: 1fr;
+        gap: 0.8em;
+
+        .category {
+            padding: 1.2em;
+            border-radius: 1.2em;
+
+            h2 {
+                font-size: 1.1em;
+            }
+
+            p {
+                font-size: 0.95em;
+            }
+        }
+    }
+}

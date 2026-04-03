@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from '../../Components/navbar'
+import {Link} from 'react-router-dom'
 import { useState,useRef } from 'react'
 import './UploadPage.css'
 
@@ -11,32 +12,50 @@ const UploadPage = () => {
     const [fileD,setfileD] = useState(null)
     const [isDragOver,setIsDragOver] = useState(false)
     const [url,setURL]  = useState(null)
+    const [isFileUploaded,setisFileUploaded] = useState(false)
+    console.log(fileD);
     const handleChange = (e)=>{
+        console.log(inputRef.current.files);
         if(inputRef.current.files){
-            setfileD(inputRef.current.files[0])
-            console.log(fileD);
+            let file = inputRef.current.files[0]
+            if (file.type !== "application/pdf") {
+                alert("Only PDF files are allowed 📄")
+                inputRef.current.value = null
+                return
+            }
+            setfileD(file)
+            setURL(URL.createObjectURL(file))
+            setisFileUploaded(true)
         }
     }
     const handleDelete = (e)=>{
-        console.log("Deleted");
+        inputRef.current.value = null
+        setisFileUploaded(false)
+        setfileD(null)
+        setURL(null)
     }
     const handleOndragOver = (e)=>{
         e.preventDefault()
         setIsDragOver(true)
     }
-    
+    console.log(url);
     const handleOnDrop = (e)=>{
         e.preventDefault()
-        console.log(e.dataTransfer.files[0]);
-        setfileD(e.dataTransfer.files[0])
-        setURL(URL.createObjectURL(fileD))
-        console.log(url);
+        if(e.dataTransfer.files.length > 0){
+            const droppedFile = e.dataTransfer.files[0]
+            if (droppedFile.type !== "application/pdf") {
+                alert("Only PDF files are allowed 📄")
+                inputRef.current.value = null
+                return
+            }
+            setisFileUploaded(true)
+            setfileD(droppedFile)
+            setURL(URL.createObjectURL(droppedFile))
+        }
         setIsDragOver(false)
-        
     }
   return (
     <div>
-        
         <Navbar/>
         <section >
             <section className='upload-paper'>
@@ -44,8 +63,8 @@ const UploadPage = () => {
                     <h1>Upload Research Paper</h1>
                     <p>Leverage artificial intelligence to categorize your academic work. Simply<br/> upload a PDF to begin the analysis.</p>
                 </section>
-
-                <section className='DAD' >
+                {/* //Drag And Drop(DAD) */}
+                <section className='DAD'>
                     <div className='drag-and-drop'>
                         <div className='inner-text'
                          onDragOver={handleOndragOver} onDrop={handleOnDrop} onDragLeave={()=>setIsDragOver(false)}
@@ -69,19 +88,26 @@ const UploadPage = () => {
                                 
                                 <div>
                                     <h2>{fileD.name}</h2>
-                                    <p>{Math.ceil(fileD.size/(1024))}KB</p>
+                                    <p>{Math.ceil(Math.ceil(fileD.size/(1024))/1024)}MB</p>
                                 </div>
 
                                 </div>
-                                <button onClick={handleDelete}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#707070" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash-icon lucide-trash"><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button>
+
+                            <div className='left-part-preview'>
+                                {url && (
+                                <a href={url} target="_blank" style={{color:"#137FEC"}}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-icon lucide-eye"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
+                                </a>
+                                )}
+                            <button onClick={handleDelete}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#707070" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash-icon lucide-trash"><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button>
+                            </div>
                             </div>}
                         </div>
 
-                        <button className='analyze'>
+                        {isFileUploaded && <Link className='analyze' to={'/Results'}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chart-spline-icon lucide-chart-spline"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7"/></svg>
                             Upoad and Analyze
-                        </button>
-                        <p>{url}</p>
+                        </Link>}
                     </div>
                 </section>
             </section>

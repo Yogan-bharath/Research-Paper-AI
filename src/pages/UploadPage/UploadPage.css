@@ -1,29 +1,34 @@
-.upload-paper{
-    /* border: 1px solid black; */
+.upload-paper {
     max-width: 90em;
     margin: 6em auto;
+    padding: 0 2em;
 }
-.upload-paper-head h1{
+
+.upload-paper-head h1 {
     font-size: 3.7em;
 }
-.upload-paper-head p{
+
+.upload-paper-head p {
     font-size: 1.8em;
     color: #647499;
 }
-.DAD{
+
+.DAD {
     display: flex;
     width: 80%;
 }
-.drag-and-drop{
+
+.drag-and-drop {
     display: flex;
     flex-direction: column;
     gap: 2em;
     width: 100%;
 }
-.inner-text{
+
+.inner-text {
     margin-top: 2em;
     border: 2px dotted #137fec42;
-    max-width:80%;
+    max-width: 80%;
     height: 38em;
     border-radius: 2em;
     background-color: #F6F7F8;
@@ -31,66 +36,79 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap:1em
+    gap: 1em;
 }
-.inner-text:hover{
+
+.inner-text:hover {
     border: 3px dotted #137fec;
 }
-.inner-text svg{
+
+.inner-text svg {
     background-color: #E7F2FD;
     border-radius: 7em;
     padding: 1em;
 }
-.inner-text h2{
+
+.inner-text h2 {
     font-size: 2em;
     font-weight: 600;
 }
-.inner-text p{
+
+.inner-text p {
     font-size: 1.35em;
 }
-.inner-text button{
+
+.inner-text button {
     background-color: #2A8CEE;
     color: white;
     border: none;
     padding: .7em 2em;
     border-radius: 7em;
 }
-.file-name{
+
+.file-name {
     border: 1px solid #E2E8F0;
-    max-width:80%;
+    max-width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1em;
     border-radius: 2em;
 }
-.left-part svg{
+
+.left-part svg {
     width: 50px;
     height: 50px;
     background-color: #E7F2FD;
     padding: 1em;
     border-radius: 7em;
 }
-.left-part h2{
+
+.left-part h2 {
     font-weight: 600;
 }
-.left-part p{
+
+.left-part p {
     font-size: 1.3em;
 }
-.left-part{
+
+.left-part {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1em;
 }
-.file-name button{
+
+.file-name button {
     background-color: transparent;
     border: none;
 }
-.file-name button:hover svg{
-    stroke:rgba(255, 0, 0, 0.432);
+
+.file-name button:hover svg {
+    stroke: rgba(255, 0, 0, 0.432);
 }
-.analyze{
+
+.analyze {
     max-width: 80%;
     display: flex;
     align-items: center;
@@ -103,4 +121,244 @@
     font-weight: 600;
     border-radius: 2em;
     border: none;
+    text-decoration: none;
+}
+
+.left-part-preview {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 1em;
+    gap: 1.5em;
+}
+
+/* --- Large desktops (1280px and below) --- */
+@media (max-width: 1280px) {
+    .upload-paper {
+        margin: 4em auto;
+    }
+
+    .upload-paper-head h1 {
+        font-size: 3em;
+    }
+
+    .inner-text {
+        max-width: 90%;
+        height: 34em;
+    }
+
+    .file-name,
+    .analyze {
+        max-width: 90%;
+    }
+
+    .DAD {
+        width: 90%;
+    }
+}
+
+/* --- Tablets / small laptops (1024px and below) --- */
+@media (max-width: 1024px) {
+    .upload-paper-head h1 {
+        font-size: 2.6em;
+    }
+
+    .upload-paper-head p {
+        font-size: 1.5em;
+    }
+
+    .inner-text {
+        max-width: 100%;
+        height: 30em;
+    }
+
+    .file-name,
+    .analyze {
+        max-width: 100%;
+    }
+
+    .DAD {
+        width: 100%;
+    }
+
+    .inner-text h2 {
+        font-size: 1.7em;
+    }
+
+    .inner-text p {
+        font-size: 1.2em;
+    }
+
+    .analyze {
+        font-size: 1.3em;
+    }
+}
+
+/* --- Tablets portrait (768px and below) --- */
+@media (max-width: 768px) {
+    .upload-paper {
+        margin: 3em auto;
+        padding: 0 1.5em;
+    }
+
+    .upload-paper-head h1 {
+        font-size: 2.2em;
+    }
+
+    .upload-paper-head p {
+        font-size: 1.4em;
+    }
+
+    .DAD {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .inner-text {
+        max-width: 100%;
+        height: 26em;
+        border-radius: 1.5em;
+        margin-top: 1em;
+    }
+
+    .inner-text h2 {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .inner-text p {
+        font-size: 1.1em;
+        text-align: center;
+        padding: 0 1em;
+    }
+
+    .file-name {
+        max-width: 100%;
+        border-radius: 1.5em;
+        padding: 0.8em;
+    }
+
+    .left-part svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .left-part p {
+        font-size: 1.1em;
+    }
+
+    .analyze {
+        max-width: 100%;
+        font-size: 1.2em;
+        padding: 0.9em 1.5em;
+        border-radius: 1.5em;
+    }
+
+    .left-part-preview {
+        gap: 1em;
+        margin-right: 0.5em;
+    }
+}
+
+/* --- Mobile (480px and below) --- */
+@media (max-width: 480px) {
+    .upload-paper {
+        margin: 2em auto;
+        padding: 0 1.2em;
+    }
+
+    .upload-paper-head h1 {
+        font-size: 1.8em;
+    }
+
+    .upload-paper-head p {
+        font-size: 1.2em;
+    }
+
+    .inner-text {
+        height: 22em;
+        gap: 0.7em;
+        border-radius: 1.2em;
+    }
+
+    .inner-text svg {
+        padding: 0.7em;
+    }
+
+    .inner-text h2 {
+        font-size: 1.3em;
+    }
+
+    .inner-text p {
+        font-size: 1em;
+    }
+
+    .inner-text button {
+        padding: 0.6em 1.5em;
+        font-size: 0.95em;
+    }
+
+    .file-name {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5em;
+        border-radius: 1.2em;
+        padding: 0.8em;
+    }
+
+    .left-part {
+        gap: 0.7em;
+    }
+
+    .left-part svg {
+        width: 35px;
+        height: 35px;
+    }
+
+    .left-part h2 {
+        font-size: 0.95em;
+    }
+
+    .left-part p {
+        font-size: 1em;
+    }
+
+    .analyze {
+        font-size: 1.1em;
+        padding: 0.8em 1.2em;
+        gap: 0.6em;
+        border-radius: 1.2em;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .left-part-preview {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8em;
+        margin-right: 0;
+    }
+}
+
+/* --- Very small screens (360px and below) --- */
+@media (max-width: 360px) {
+    .upload-paper-head h1 {
+        font-size: 1.5em;
+    }
+
+    .upload-paper-head p {
+        font-size: 1.1em;
+    }
+
+    .inner-text {
+        height: 20em;
+    }
+
+    .inner-text h2 {
+        font-size: 1.1em;
+    }
+
+    .analyze {
+        font-size: 1em;
+    }
 }
